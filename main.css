@@ -1,0 +1,43 @@
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+div {
+	position: fixed;
+	width: 50%;
+	height: 50%;
+}
+
+#topLeft{
+	background: #f09;
+	top: 0;
+	left: 0;
+	right: 50%;
+	bottom: 50%
+}
+
+#topRight{
+	background: #f90;
+	top: 0;
+	left: 50%;
+	right: 0;
+	bottom: 50%
+}
+
+#bottomLeft{
+	background: #009;
+	top: 50%;
+	left: 0;
+	right: 50%;
+	bottom: 0
+}
+
+#bottomRight{
+	background: #090;
+	top: 50%;
+	left: 50%;
+	right: 0;
+	bottom: 0
+}
