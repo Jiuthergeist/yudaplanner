@@ -4,40 +4,38 @@ html, body {
 	margin: 0;
 }
 
-div {
-	position: fixed;
-	width: 50%;
-	height: 50%;
-}
-
 #topLeft{
-	background: #f09;
+	position: fixed;
+	background-color: green;
 	top: 0;
 	left: 0;
-	right: 50%;
-	bottom: 50%
+	width: 25%;
+	height: 33%;
 }
 
 #topRight{
-	background: #f90;
+	position: fixed;
+	background-color: blue;
 	top: 0;
-	left: 50%;
-	right: 0;
-	bottom: 50%
+	left: 25%;
+	width: 75%;
+	height: 50%;
 }
 
 #bottomLeft{
-	background: #009;
-	top: 50%;
+	position: fixed;
+	background-color: red;
+	top: 33%;
 	left: 0;
-	right: 50%;
-	bottom: 0
+	width: 25%;
+	height: 67%;
 }
 
 #bottomRight{
-	background: #090;
+	position: fixed;
+	background-color: yellow;
 	top: 50%;
-	left: 50%;
-	right: 0;
-	bottom: 0
+	left: 25%;
+	width: 75%;
+	height: 50%;
 }

@@ -8,25 +8,25 @@
 
 <head>
 
-	<title>YudaPlanner</title>
-	<link href="main.css" rel="stylesheet" type="type/css"/>
+<title>YudaPlanner</title>
+<link href="main.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
 <body>
-	<div class="topLeft">
+	<div id="topLeft">
 		<p> hi </p>
 	</div>
 
-	<div class="topRight">
+	<div id="topRight">
 		<p> hi </p>
 	</div>
 
-	<div class="bottomLeft">
+	<div id="bottomLeft">
 		<p> hi </p>
 	</div>
 
-	<div class="bottomRight">
+	<div id="bottomRight">
 		<p> hi </p>
 	</div>
 
