@@ -5,37 +5,21 @@ html, body {
 }
 
 #topLeft{
-	position: fixed;
 	background-color: green;
-	top: 0;
-	left: 0;
-	width: 25%;
-	height: 33%;
 }
 
 #topRight{
-	position: fixed;
 	background-color: blue;
-	top: 0;
-	left: 25%;
-	width: 75%;
-	height: 50%;
 }
 
 #bottomLeft{
-	position: fixed;
 	background-color: red;
-	top: 33%;
-	left: 0;
-	width: 25%;
-	height: 67%;
 }
 
 #bottomRight{
-	position: fixed;
 	background-color: yellow;
-	top: 50%;
-	left: 25%;
-	width: 75%;
-	height: 50%;
+}
+
+.select2 {
+  width: 100%!important; /* overrides computed width, 100px in your demo */
 }
