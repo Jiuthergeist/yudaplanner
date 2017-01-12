@@ -19,7 +19,3 @@ html, body {
 #bottomRight{
 	background-color: yellow;
 }
-
-.select2 {
-  width: 100%!important; /* overrides computed width, 100px in your demo */
-}

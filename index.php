@@ -24,9 +24,21 @@
 		<!-- Import Bootstrap Javascript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+		<!-- Document Ready Function
+		     Initialization Work:
+		     - Clears the #class-menu
+		-->
+		<script>
+		$(document).ready(function() {
+			$("#class-menu").val(null).trigger("change"); 
+		});
+		</script>
+
 	</head>
 
 	<body>
+
+
 
 
 		<div class="container">
@@ -59,42 +71,71 @@
 
 			<!-- TOP ROW -->
 			<div class="row">
-				<div class="col-md-4" id="topLeft">
-					<p> TOP LEFT - GENERAL STATS </p>
-				</div>
-				<div class="col-md-4" id="topMiddle">
-					<p> TOP MIDDLE - MY SELECTED CLASSES </p>
-				</div>
-				<div class="col-md-4" id="topRight">
-					<p> TOP RIGHT - CLASS SELECTION </p>
-					<div id="select2-classes" class="select2-drop">
 
-						<select id="class-menu" class="class-selection">
-						  	<option value="EE16A">EE16A: Designing Information Systems and Devices I</option>
-						  	<option value="EE16B">EE16B: Designing Information Systems and Devices II</option>
-						  	<option value="CS61A">CS61A: The Structure and Interpretation of Computer Programs</option>
-						  	<option value="CS61B">CS61B: Data Structures</option>
-						  	<option value="CS61C">CS61C: Machine Structures</option>
-						  	<option value="CS70">CS70: Discrete Mathematics and Probability Theory</option>
-						</select>
-						<script>
-							$("select").select2();
-						</script>
-					</div>
+				<div class="col-md-8" id="topLeft">
+					<p> TOP LEFT - CLASS SELECTION </p>
+
+					<form class="form-inline">
+
+						<div id="select2-classes" class="select2-drop form-group">
+
+							<select id="class-menu" class="class-selection" style="width: 100%">
+							  	<option value="EE16A">EE16A: Designing Information Systems and Devices I</option>
+							  	<option value="EE16B">EE16B: Designing Information Systems and Devices II</option>
+							  	<option value="CS61A">CS61A: The Structure and Interpretation of Computer Programs</option>
+							  	<option value="CS61B">CS61B: Data Structures</option>
+							  	<option value="CS61C">CS61C: Machine Structures</option>
+							  	<option value="CS70">CS70: Discrete Mathematics and Probability Theory</option>
+							</select>
+							<script>
+								$("#class-menu").select2({
+									placeholder: "Choose a course...",
+									allowClear: true
+								});
+							</script>
+						</div>
+						<button type="button" class="btn btn-default btn-sm" id="add-class-button" onclick="addClass()">
+  							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+						</button>
+
+					</form>
+
+					<p> MY SELECTED CLASSES GO HERE </p>
+					<p id="my-classes-list"></p>
 				</div>
+
+
+				<div class="col-md-4" id="topRight">
+					<p> TOP RIGHT - GENERAL STATS </p>
+				</div>
+
+
 			</div>
 
 			<!-- BOTTOM ROW -->
 			<div class="row">
-				<div class="col-md-4" id="bottomLeft">
-					<p> BOTTOM LEFT - YUDA </p>
+
+				<div class="col-md-8" id="bottomLeft">
+					<p> BOTTOM LEFT - CLASS-SPECIFIC STATS </p>
 				</div>
 
-				<div class="col-md-8" id="bottomRight">
-					<p> BOTTOM RIGHT - CLASS-SPECIFIC STATS </p>
+				<div class="col-md-4" id="bottomRight">
+					<p> BOTTOM RIGHT - YUDA </p>
 				</div>
+
+
 			</div>
 		</div>
+
+		<!-- Javascript Code to Select Classes -->
+		<script>
+			function addClass() {
+				var chosen = document.getElementById("class-menu").value;
+				var classList = document.getElementById("my-classes-list");
+				classList.innerHTML = chosen;
+			}
+
+		</script>
 
 	</body>
 
