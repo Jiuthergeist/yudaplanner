@@ -101,7 +101,7 @@
 					</form>
 
 					<p> MY SELECTED CLASSES GO HERE </p>
-					<p id="my-classes-list"></p>
+					<ul id="my-classes-list"></ul>
 				</div>
 
 
@@ -132,7 +132,13 @@
 			function addClass() {
 				var chosen = document.getElementById("class-menu").value;
 				var classList = document.getElementById("my-classes-list");
-				classList.innerHTML = chosen;
+				var newItem = document.createElement("li");
+				var newItemId = "*" + chosen;
+				if (document.getElementById(newItemId) == null) {
+					newItem.appendChild(document.createTextNode(chosen));
+					newItem.setAttribute("id", newItemId);
+					classList.appendChild(newItem);
+				}
 			}
 
 		</script>
