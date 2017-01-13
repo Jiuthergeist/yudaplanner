@@ -24,6 +24,8 @@
 		<!-- Import Bootstrap Javascript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+		<script src="frontEnd.js"></script>
+
 		<!-- Document Ready Function
 		     Initialization Work:
 		     - Clears the #class-menu
@@ -126,34 +128,6 @@
 
 			</div>
 		</div>
-
-		<!-- Javascript Code to Select Classes -->
-		<script>
-			function addClass() {
-
-				var chosen = document.getElementById("class-menu").value;
-				var classList = document.getElementById("my-classes-list");
-				var newItem = document.createElement("li");
-				var newItemId = "*" + chosen;
-
-				if (document.getElementById(newItemId) == null) {
-					newItem.appendChild(document.createTextNode(chosen));
-					newItem.setAttribute("id", newItemId);
-					var newClass = "list-group-item list-group-item-info";
-					var items = classList.getElementsByTagName("li");
-					if (items.length > 0) {
-						if (items[items.length - 1].getAttribute("class") == newClass) {
-							newClass = "list-group-item list-group-item-warning";
-						}
-					}
-
-					newItem.setAttribute("class", newClass);
-					classList.appendChild(newItem);
-				}
-
-			}
-
-		</script>
 
 	</body>
 
