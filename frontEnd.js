@@ -26,6 +26,7 @@ function addClass() {
 		removeButton.setAttribute("type", "button");
 		removeButton.setAttribute("class", "btn btn-default btn-xs pull-right")
 		removeButton.setAttribute("id", newItemId + "REMOVE");
+		removeButton.addEventListener("click", removeClass);
 
 		removeButton.appendChild(removeButtonSpan);
 		newItem.appendChild(removeButton);
@@ -34,4 +35,13 @@ function addClass() {
 		classList.appendChild(newItem);
 	}
 
+}
+
+/* Invoked when the user tries to delete a class. */
+function removeClass() {
+	var classList = document.getElementById("my-classes-list");
+	var endIndex = this.id.indexOf("REMOVE");
+	var chosenId = this.id.substring(0, endIndex);
+	var chosenElement = document.getElementById(chosenId);
+	classList.removeChild(chosenElement);
 }
