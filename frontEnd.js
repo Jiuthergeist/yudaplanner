@@ -9,7 +9,13 @@ function addClass() {
 
 	/* Class is only added if it's not added already! */
 	if (document.getElementById(newItemId) == null && chosen != "") {
-		newItem.appendChild(document.createTextNode(chosen));
+
+		var checkBox = document.createElement("input");
+		checkBox.setAttribute("type", "checkbox");
+		checkBox.setAttribute("id", newItemId + "CHECKBOX");
+		newItem.appendChild(checkBox);
+
+		newItem.appendChild(document.createTextNode(" " + chosen));
 		newItem.setAttribute("id", newItemId);
 		var newClass = "list-group-item list-group-item-info";
 		var items = classList.getElementsByTagName("li");
@@ -30,18 +36,6 @@ function addClass() {
 
 		removeButton.appendChild(removeButtonSpan);
 		newItem.appendChild(removeButton);
-
-		var checkButton = document.createElement("button");
-		var checkButtonSpan = document.createElement("span");
-		checkButtonSpan.setAttribute("class", "glyphicon glyphicon-check");
-		checkButtonSpan.setAttribute("aria-hidden", true);
-		checkButton.setAttribute("type", "button");
-		checkButton.setAttribute("class", "btn btn-default btn-xs pull-right")
-		checkButton.setAttribute("id", newItemId + "CHECK");
-		checkButton.addEventListener("click", toggleCheck);
-
-		checkButton.appendChild(checkButtonSpan);
-		newItem.appendChild(checkButton);
 
 		newItem.setAttribute("class", newClass);
 		classList.appendChild(newItem);
