@@ -8,7 +8,7 @@ function addClass() {
 	var newItemId = "*" + chosen;
 
 	/* Class is only added if it's not added already! */
-	if (document.getElementById(newItemId) == null) {
+	if (document.getElementById(newItemId) == null && chosen != "") {
 		newItem.appendChild(document.createTextNode(chosen));
 		newItem.setAttribute("id", newItemId);
 		var newClass = "list-group-item list-group-item-info";
@@ -31,6 +31,18 @@ function addClass() {
 		removeButton.appendChild(removeButtonSpan);
 		newItem.appendChild(removeButton);
 
+		var checkButton = document.createElement("button");
+		var checkButtonSpan = document.createElement("span");
+		checkButtonSpan.setAttribute("class", "glyphicon glyphicon-check");
+		checkButtonSpan.setAttribute("aria-hidden", true);
+		checkButton.setAttribute("type", "button");
+		checkButton.setAttribute("class", "btn btn-default btn-xs pull-right")
+		checkButton.setAttribute("id", newItemId + "CHECK");
+		checkButton.addEventListener("click", toggleCheck);
+
+		checkButton.appendChild(checkButtonSpan);
+		newItem.appendChild(checkButton);
+
 		newItem.setAttribute("class", newClass);
 		classList.appendChild(newItem);
 	}
@@ -44,4 +56,41 @@ function removeClass() {
 	var chosenId = this.id.substring(0, endIndex);
 	var chosenElement = document.getElementById(chosenId);
 	classList.removeChild(chosenElement);
+}
+
+/* Invoked when the user toggles whether the selected class is included 
+in the general stat calculation. */
+
+function toggleCheck() {/*
+	var classList = document.getElementById("my-classes-list");
+	var checkIndex = this.id.indexOf("UNCHECK");
+	var checkButton;
+	var checkButtonSpan;
+
+	var newItem = document.createElement("li");
+	var newItemId = "*" + chosen;
+
+	if (checkIndex == -1) { //box is checked
+		checkButton = document.createElement("button");
+		checkButtonSpan = document.createElement("span");
+		checkButtonSpan.setAttribute("class", "glyphicon glyphicon-unchecked");
+		checkButtonSpan.setAttribute("aria-hidden", true);
+		checkButton.setAttribute("type", "button");
+		checkButton.setAttribute("class", "btn btn-default btn-xs pull-right")
+		checkButton.setAttribute("id", newItemId + "UNCHECK");
+		checkButton.addEventListener("click", toggleCheck);
+	}
+	else {
+		checkButton = document.createElement("button");
+		checkButtonSpan = document.createElement("span");
+		checkButtonSpan.setAttribute("class", "glyphicon glyphicon-check");
+		checkButtonSpan.setAttribute("aria-hidden", true);
+		checkButton.setAttribute("type", "button");
+		checkButton.setAttribute("class", "btn btn-default btn-xs pull-right")
+		checkButton.setAttribute("id", newItemId + "CHECK");
+		checkButton.addEventListener("click", toggleCheck);
+	}
+
+	checkButton.appendChild(checkButtonSpan);
+*/
 }
