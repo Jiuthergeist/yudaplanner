@@ -13,6 +13,7 @@ function addClass() {
 		var checkBox = document.createElement("input");
 		checkBox.setAttribute("type", "checkbox");
 		checkBox.setAttribute("id", newItemId + "CHECKBOX");
+		checkBox.setAttribute("checked", "true");
 		newItem.appendChild(checkBox);
 
 		newItem.appendChild(document.createTextNode(" " + chosen));
