@@ -51,6 +51,20 @@ function removeClass() {
 	var chosenId = this.id.substring(0, endIndex);
 	var chosenElement = document.getElementById(chosenId);
 	classList.removeChild(chosenElement);
+	colorClassList();
+}
+
+/* Re-colors the class list. */
+function colorClassList() {
+	var classList = document.getElementById("my-classes-list");
+	var items = classList.getElementsByTagName("li");
+	for (var i = 0; i < items.length; i++) {
+		if (i % 2 == 0) {
+			items[i].setAttribute("class", "list-group-item list-group-item-info");
+		} else {
+			items[i].setAttribute("class", "list-group-item list-group-item-warning");
+		}
+	}
 }
 
 /* Invoked when the user toggles whether the selected class is included 
